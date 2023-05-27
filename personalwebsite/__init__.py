@@ -20,5 +20,9 @@ def create_app_from_config():
     login_manager.init_app(app)
     mail.init_app(app)
 
+    from personalwebsite.main.routes import main
+
+    app.register_blueprint(main)
+
     return app
 
