@@ -14,6 +14,8 @@ def create_app_from_config():
 
     app = Flask(__name__)
 
+    app.config.from_object(Config)
+
     db.init_app(app)
     login_manager.init_app(app)
     mail.init_app(app)
