@@ -13,6 +13,8 @@
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto">
     <!-- npm packages -->
 
+    <!-- Bootstrap -->
+    <link rel="stylesheet"  href="{{ url_for('static', filename='node_modules/bootstrap/dist/css/bootstrap.min.css') }}">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/@fortawesome/fontawesome-free/css/fontawesome.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/@fortawesome/fontawesome-free/css/brands.css') }}">
@@ -24,5 +26,6 @@
   <body>
   {% block body %}{% endblock %}
   
+  <script src="{{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
   </body>
 </html>
