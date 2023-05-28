@@ -9,6 +9,7 @@
   "author": "Kunhee Ha",
   "license": "ISC",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.4.0"
+    "@fortawesome/fontawesome-free": "^6.4.0",
+    "animate.css": "^4.1.1"
   }
 }
