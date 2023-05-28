@@ -8,8 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Hi mom">
     <meta name="author" content="Kunhee Ha">
+
+    <!-- Google Font Roboto -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto">
+    <!-- npm packages -->
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/@fortawesome/fontawesome-free/css/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/@fortawesome/fontawesome-free/css/brands.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/@fortawesome/fontawesome-free/css/solid.css') }}">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/animate.css/animate.css') }}">
+
   </head>
   <body>
+  {% block body %}{% endblock %}
   
   </body>
 </html>
