@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Kunhee Ha</title>
-
     <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,10 +20,17 @@
     <!-- Animate.css -->
     <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/animate.css/animate.css') }}">
 
+    <!-- My stuff -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+  {% block head %}{% endblock %}
   </head>
   <body>
   {% block body %}{% endblock %}
   
+  <!-- Bootstrap -->
   <script src="{{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+  <!-- My Stuff -->
+  <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
   </body>
 </html>

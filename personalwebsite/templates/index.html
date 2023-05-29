@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block head %}
+  <title>{{ me.first_name }} {{ me.last_name }}</title>
+
+{% endblock %}
+{% block body %}
+  <!-- NavBar -->
+  <nav class="navbar navbar-expand navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <!-- to add something here or not to add, that is the question -->
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="" alt="" /></a>
+      <ul class="navbar-nav text-uppercase ml-auto">
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Top Section -->
+  <header class="home-header">
+    <div class="bg-image">
+      <div class="container">
+        <div class="row section-separator home-padding">
+          <div class="col-md-9 col-xs-12 d-block">
+            <div class="header-info">
+              <h3 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">About you</h3>
+              <div class="about-user" id="introduction-text"></div>
+              <div class="about-user" id="userinfo-text"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+
+{% endblock %}
