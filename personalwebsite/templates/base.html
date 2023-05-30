@@ -31,6 +31,6 @@
   <!-- Bootstrap -->
   <script src="{{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
   <!-- My Stuff -->
-  <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+  {% block scripts %}{% endblock %}
   </body>
 </html>

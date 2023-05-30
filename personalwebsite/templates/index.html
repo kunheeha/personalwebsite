@@ -33,8 +33,9 @@
       </div>
     </div>
   </header>
+{% endblock %}
 
 
-
-
+{% block scripts %}
+  <script src="{{ url_for('static', filename='js/aboutyou.js') }}"></script>
 {% endblock %}
