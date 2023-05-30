@@ -154,9 +154,9 @@ function typePseudoLoadingText(text, element, delay) {
 
 function typeAbout(delay) {
   typePseudoLoadingText(pseudoLoadingText, elementPseudoLoadingText, delay);
-  let waitTime = delay * pseudoLoadingText.length + delay * 4**3 + 10;
+  let waitTime = delay * pseudoLoadingText.length + delay * 4**3 + 500;
   function typeDeviceInfo() {
-    waitTime = typeout(deviceInfo, elementDeviceInfo, delay) + 10;
+    waitTime = typeout(deviceInfo, elementDeviceInfo, delay) + 500;
     function typeUserInfo() {
       let url = "https://ipinfo.io/json?token=bc1db2f1068cf5";
       fetch(url)
