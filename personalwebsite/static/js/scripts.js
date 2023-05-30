@@ -1,4 +1,4 @@
-// Type out function
+// Type out
 function typeout(text, element, delay) {
   const letters = text.split("");
   let i = 0;
@@ -10,7 +10,12 @@ function typeout(text, element, delay) {
     }
   }
   type();
-  return letters.length;
+  return letters.length * delay;
+}
+
+// Clear out
+function clearout(element) {
+  element.innerHTML = "";
 }
 
 // Get browser information
@@ -85,25 +90,31 @@ function getDeviceType(info) {
 }
 
 
-// Get user info
-function getUserInfo() {
-  let url = "https://ipinfo.io/json?token=bc1db2f1068cf5";
-  let userInfo;
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      userInfo = `You are located in ${data.city}, ${data.region}, your public ip is ${data.ip}, and your internet provider seems to be ${data.org}.`;
-      typeout(userInfo, document.getElementById("userinfo-text"), 50);
-    })
-    .catch(error => {
-      console.log("ipinfo error: ", error);
-    })
+
+// Set device info text and return
+function getDeviceInfo(operatingSystem, screenSize, browserInfo) {
+  let deviceInfo;
+  if (operatingSystem) {
+    deviceInfo = `You are viewing this website on a ${screenSize} screened ${operatingSystem} ${getDeviceType(browserInfo).device}, and your browser is ${getBrowser(browserInfo)}.`;
+  } else {
+    deviceInfo = `You are viewing this website on ${getDeviceType(browserInfo).device} with a ${screenSize} screen, and your browser is ${getBrowser(browserInfo)}.`;
+  }
+  return deviceInfo;
 }
 
 
-let pseudoLoadingText = "Getting your info";
+const pseudoLoadingText = "Getting your info";
+const browserInfo = navigator.userAgent;
+const screenSize = `${window.screen.width}x${window.screen.height}`;
+const operatingSystem = getDeviceType(browserInfo).operatingSystem;
+const deviceInfo = getDeviceInfo(operatingSystem, screenSize, browserInfo);
 
-function loadPseudoLoadingText(text, element, delay) {
+const elementPseudoLoadingText = document.getElementById("pseudo-loading");
+const elementDeviceInfo = document.getElementById("introduction-text");
+const elementUserInfo = document.getElementById("userinfo-text");
+
+
+function typePseudoLoadingText(text, element, delay) {
   const letters = text.split("");
   const ellipsisDelay = delay * 4;
   let i = 0;
@@ -129,6 +140,8 @@ function loadPseudoLoadingText(text, element, delay) {
           }
           if (k < 3) {
             clearEllipsis();
+          } else {
+            clearout(element);
           }
         }
       }
@@ -138,27 +151,29 @@ function loadPseudoLoadingText(text, element, delay) {
   type();
 }
 
-const browserInfo = navigator.userAgent;
-const screenSize = `${window.screen.width}x${window.screen.height}`;
-const operatingSystem = getDeviceType(browserInfo).operatingSystem;
 
-function typeAbout(placeholder, element, delay) {
-  loadPseudoLoadingText(placeholder, element, delay);
-  let waitTime = delay * placeholder.length + delay * 4**3 + 10;
-  function typeSystemInfo() {
-    let systemInfo; 
-    if (operatingSystem) {
-      systemInfo = `You are viewing this website on a ${screenSize} screened ${operatingSystem} ${getDeviceType(browserInfo).device}, and your browser is ${getBrowser(browserInfo)}.`;
-    } else {
-      systemInfo = `You are viewing this website on ${getDeviceType(browserInfo).device} with a ${screenSize} screen, and your browser is ${getBrowser(browserInfo)}.`;
+function typeAbout(delay) {
+  typePseudoLoadingText(pseudoLoadingText, elementPseudoLoadingText, delay);
+  let waitTime = delay * pseudoLoadingText.length + delay * 4**3 + 10;
+  function typeDeviceInfo() {
+    waitTime = typeout(deviceInfo, elementDeviceInfo, delay) + 10;
+    function typeUserInfo() {
+      let url = "https://ipinfo.io/json?token=bc1db2f1068cf5";
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          let userInfo = `You are located in ${data.city}, ${data.region}, your public ip is ${data.ip}, and your internet provider seems to be ${data.org}.`;
+          typeout(userInfo, elementUserInfo, delay);
+        })
+        .catch(error => {
+          console.log("ipinfo error: ", error);
+          let userInfo = ". . . and your device managed to stop me from getting information about your location and internet provider.";
+          typeout(userInfo, elementUserInfo, delay);
+        })
     }
-    element.innerHTML = "";
-    waitTime = typeout(systemInfo, element, delay) * delay + 500;
-    setTimeout(getUserInfo, waitTime);
+    setTimeout(typeUserInfo, waitTime);
   }
-  setTimeout(typeSystemInfo, waitTime);
+  setTimeout(typeDeviceInfo, waitTime);
 }
 
-typeAbout(pseudoLoadingText, document.getElementById("introduction-text"), 50);
-
-
+typeAbout(50);
