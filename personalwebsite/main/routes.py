@@ -11,6 +11,6 @@ def index():
     myid = int(current_app.config['MYSELF_ID'])
     me = db.get_or_404(Myself, myid)
     contacts = db.session.execute(
-            db.select(Contact).filter_by(me_id=myid).scalars())
+            db.select(Contact).filter_by(me_id=myid)).scalars().all()
 
     return render_template('index.html', me=me, contacts=contacts)
