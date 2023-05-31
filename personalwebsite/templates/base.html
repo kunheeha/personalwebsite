@@ -26,11 +26,23 @@
   {% block head %}{% endblock %}
   </head>
   <body>
-  {% block body %}{% endblock %}
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <!-- to add something here or not to add, that is the question -->
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="" alt="" /></a>
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    {% block body %}{% endblock %}
   
-  <!-- Bootstrap -->
-  <script src="{{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-  <!-- My Stuff -->
-  {% block scripts %}{% endblock %}
+    <!-- Bootstrap -->
+    <script src="{{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- My Stuff -->
+    {% block scripts %}{% endblock %}
   </body>
 </html>
