@@ -21,6 +21,44 @@
       </div>
     </div>
   </header>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="row about-section-separator">
+        <div class="col-sm-12 col-md-6 aboutMain">
+          <div class="about-inner">
+            <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">About Me</h2>
+            <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">{{ me.about }}</p>
+            <div class="about-tag">
+              <ul>
+                <li><span>Flask</span></li>
+                <li><span>Django</span></li>
+                <li><span>PostgreSQL</span></li>
+                <li><span>Gunicorn</span></li>
+                <li><span>Nginx</span></li>
+              </ul>
+            </div>
+            <!-- TODO add cv form button here -->
+          </div>
+        </div>
+        <!-- Empty div as gap filler -->
+        <div class="d-none d-sm-none d-md-block col-md-1"></div>
+
+        <div class="d-none d-sm-none d-md-block col-md-5">
+          <div class="languages wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+            <div>
+              <ul>
+                {% for contact in contacts %}
+                <li><a target="_blank", href="{{ contact.link }}"><i class="{{ contact.fa_icon }}"></i>{{ contact.contact_type }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 {% endblock %}
 
 
