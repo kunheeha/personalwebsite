@@ -1,6 +1,7 @@
-from flask import Blueprint, render_template, current_app
-from personalwebsite import db
+from flask import Blueprint, render_template, current_app, request, jsonify
+from personalwebsite import db, mail
 from personalwebsite.models import Myself, Contact
+from flask_mail import Message
 
 
 main = Blueprint('main', __name__)
@@ -19,3 +20,33 @@ def index():
                 if contact.contact_type != "email"]
 
     return render_template('index.html', me=me, email=email, contacts=contacts)
+
+
+@main.route('/contact', methods=['POST', 'GET'])
+def contact():
+    if request.method == 'POST':
+        # why is this so broken up? because pycodestyle
+        sender_name = (
+                f"{request.form.get('fname')} {request.form.get('lname')}"
+                )
+        sender_email = request.form.get('email')
+        sender_message = request.form.get('message')
+        to_receive = Message(subject='From Website',
+                             sender='kunheeha@gmail.com',
+                             recipients=['kunheeha@gmail.com'])
+        to_send = Message(subject='Message Received',
+                          sender='kunheeha@gmail.com',
+                          recipients=[sender_email])
+        to_receive.html = render_template('to_me.html',
+                                          sender_name=sender_name,
+                                          sender_email=sender_email,
+                                          sender_message=sender_message)
+        to_send.html = render_template('autoresponse.html',
+                                       sender_name=sender_name)
+
+        try:
+            mail.send(to_receive)
+            mail.send(to_send)
+            return jsonify(status=True)
+        except Exception:
+            return jsonify(status=False)
