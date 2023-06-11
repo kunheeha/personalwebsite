@@ -1,6 +1,7 @@
 html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  height: 100%;
 }
 
 body {
@@ -9,6 +10,7 @@ body {
   font-weight: 500;
   opacity: 0.9;
   overflow-x: visible;
+  height: 100%;
 }
 
 
@@ -182,13 +184,16 @@ ul li {
   color: #FFF
 }
 
-.home-header .bg-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/backgroundimg3.jpeg");
-  height: 50%;
+.fullscreen {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/drumcat.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 .home-padding {
