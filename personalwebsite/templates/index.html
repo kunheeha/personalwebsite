@@ -4,6 +4,18 @@
 
 {% endblock %}
 {% block body %}
+  <!-- NavBar -->
+  <nav class="navbar navbar-expand navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <!-- to add something here or not to add, that is the question -->
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="" alt="" /></a>
+      <ul class="navbar-nav text-uppercase ml-auto">
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Projects</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
   <!-- Top Section -->
   <section class="home-header fullscreen">
     <div class="container">
@@ -107,4 +119,6 @@
 
 {% block scripts %}
   <script src="{{ url_for('static', filename='js/aboutyou.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/email.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/scrolling.js') }}"></script>
 {% endblock %}
