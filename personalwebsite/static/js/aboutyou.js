@@ -35,7 +35,7 @@ function getBrowser(info) {
   }
   // Chrome
   else if (info.includes("Chrome")) {
-    browser = "probably Chrome";
+    browser = "Chrome";
   }
   else if (info.includes("Safari")) {
     browser = "Safari";
