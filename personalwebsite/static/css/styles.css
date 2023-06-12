@@ -46,9 +46,16 @@ ul li {
 
 /* GENERAL */
 
+.fullscreen {
+  height: 100%;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
 .section-separator {
-  padding: 60px 0;
-  padding-top: 80px;
+  padding: 80px 0px 60px;
 }
 
 .text-center {
@@ -176,160 +183,30 @@ ul li {
 }
 
 
+/* About you */
 
-
-/* HOME */
-
-.home-header {
-  color: #FFF
-}
-
-.fullscreen {
-  height: 100%;
-  width: 100%;
+.about-user {
+  color: #FFF;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/drumcat.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
 }
 
-.home-padding {
-  padding: 180px 0;
+.about-user .container {
+  font-size: 26px;
+  padding: 30% 0px 0px;
 }
 
-.header-info {
-  padding-top: 100px;
-}
-
-.header-info h2 {
-  font-size: 60px;
-  font-weight: 600;
-  line-height: 65px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.header-info h3 {
+.about-user h1 {
   font-size: 40px;
   font-weight: 600;
   line-height: 65px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 20px 0px;
 }
 
-.header-info h4 {
-  font-size: 26px;
-  line-height: 34px;
-  margin-bottom: 30px;
-}
-
-.header-info .about-user {
-  font-size: 26px;
-  margin-bottom: 20px;
-}
-
-.header-info ul {
-  margin-top: 20px;
-}
-
-.header-info ul li {
-  margin: 10px 0;
-}
-
-.header-info ul li a {
-  text-decoration: none;
-  color: #FFF;
-}
-
-.header-info ul li a:hover {
-  cursor: pointer;
-}
-
-.header-info ul li .fa {
-  margin-right: 15px;
-  display: inline-block;
-}
-
-.header-info ul li address {
-  display: inline-block;
-}
-
-.header-info ul li:hover .fa {
-  color: #778899;
-}
-
-.header-info .social-icon {
-  margin-top: 0;
-}
-
-.header-info .social-icon li .fa {
-  font-size: 18px;
-  line-height: 30px;
-  padding: 4px 14px;
-  margin-right: 10px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  border-radius: 3px;
-}
-
-.header-info .social-icon li .fa:hover {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.header-info .social-icon li a {
-  font-size: 25px;
-  text-align: center;
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  margin-right: 0;
-  border-radius: 50%;
-}
-
-.social-icon {
-  display: inline-block;
-}
-
-.social-icon li {
-  list-style: none;
-  float: left;
-  margin-bottom: 0px;
-  margin-right: 8px;
-}
-
-.social-icon li a {
-  text-align: center;
-  width: 45px;
-  height: 45px;
-  padding: 10px;
-  border-radius: 50%;
-}
-
-.social-icon li:last-child a {
-  margin-right: 0px;
-}
-
-/*Profile Photo*/
-
-.p-img {
-  margin: 0 auto;
-  float: none;
-  margin-top: 30px;
-  text-align: center;
-  margin-left: 50px;
-}
-
-.p-img img {
-  margin: 0 auto;
-  float: none;
-  text-align: center;
-  margin-top: 15px;
-  border-radius: 30%;
-  border: 20px solid rgba(0, 0, 0, 0.07);
+.about-user-text {
+  margin: 20px 0px;
 }
 
 
