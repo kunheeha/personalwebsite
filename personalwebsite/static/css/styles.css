@@ -55,7 +55,7 @@ ul li {
 }
 
 .section-separator {
-  padding: 80px 0px 60px;
+  padding: 75px 0px 60px;
 }
 
 .text-center {
@@ -214,6 +214,10 @@ ul li {
 
 /* About me */
 
+.about-me-section-separator {
+  padding: 100px 0px 60px;
+}
+
 .about-me h1 {
   margin: 20px 0px;
 }
@@ -226,6 +230,11 @@ ul li {
 }
 
 /* Contact */
+
+.contact .card {
+  border: 0;
+  background-color: transparent;
+}
 
 /* ABOUT */
 
