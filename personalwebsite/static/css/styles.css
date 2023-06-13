@@ -210,13 +210,28 @@ ul li {
 }
 
 
+/* Main Section */
+
+/* About me */
+
+.about-me h1 {
+  margin: 20px 0px;
+}
+
+/* Projects */
+
+.projects .project-item {
+  padding: 20px;
+  border-radius: 4px;
+}
+
+/* Contact */
 
 /* ABOUT */
 
 
 .about-section-separator {
-  padding-bottom: 20px;
-  padding-top: 80px;
+  padding: 60px 0px 30px;
 }
 
 .about-section .about-inner h2 {

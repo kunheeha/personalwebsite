@@ -27,88 +27,79 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="about-section" id="about">
-    <div class="container">
-      <div class="row about-section-separator">
-        <div class="col-sm-12 col-md-6 aboutMain">
-          <div class="about-inner">
-            <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">About Me</h2>
-            <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">{{ me.about }}</p>
-            <div class="about-tag">
-              <ul>
-                <li><span>Flask</span></li>
-                <li><span>Django</span></li>
-                <li><span>PostgreSQL</span></li>
-                <li><span>Gunicorn</span></li>
-                <li><span>Nginx</span></li>
-              </ul>
-            </div>
-            <!-- TODO add cv form button here -->
+  <!-- Main Section -->
+  <section class="fullscreen">
+    <!-- About Me -->
+    <div class="about-me section-separator" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1 class="h2">About Me</h1>
+            <p>{{ me.about }}</p>
           </div>
-        </div>
-        <!-- Empty div as gap filler -->
-        <div class="d-none d-sm-none d-md-block col-md-1"></div>
-
-        <div class="d-none d-sm-none d-md-block col-md-5">
-          <div class="languages wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-            <div>
-              <ul>
-                {% for contact in contacts %}
-                <li><a target="_blank", href="{{ contact.link }}"><i class="{{ contact.fa_icon }}"></i>{{ contact.contact_type }}</a></li>
-                {% endfor %}
-              </ul>
-            </div>
+          <div class="col">
+            <ul>
+              {% for contact in contacts %}
+              <li><a target="_blank", href="{{ contact.link }}"><i class="{{ contact.fa_icon }}"></i>{{ contact.contact_type }}</a></li>
+              {% endfor %}
+            </ul>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <!-- CONTACT -->
-  <section id="contact" class="contact-section">
-    <div class="container">
-      <div class="row section-separator">
-        <div class="col-sm-12 text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+    <!-- Projects -->
+    <div class="projects section-separator bg-light">
+      <div class="container">
+        <div class="text-center">
+          <h2>Personal Projects</h2>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="project-item shadow-1 white-bg">
+              <i class="fa fa-code iron-color"></i>
+              <h3>Hello</h3>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+    <!-- Contact -->
+    <div class="contact section-separator">
+      <div class="container">
+        <div class="text-center">
           <h2>Contact Me</h2>
         </div>
-        <div class="map-image image-bg col-sm-12">
-          <div class="container mt-30">
-            <div class="row">
-              <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                <div class="card card-contact">
-                  <div class="card-body">
-                    <div class="formMessages"></div>
-                    <form class="contact-form" method="POST" action="">
-                      <div>
-                        <div class="form-label-group">
-                          <input id="inputFname" type="text" name="fname" class="form-control" placeholder="First Name" required>
-                          <label for="inputFname">First Name</label>
-                        </div>
-                        <div class="form-label-group">
-                          <input id="inputLname" type="text" name="lname" class="form-control" placeholder="Last Name" required>
-                          <label for="inputLname">Last Name</label>
-                        </div>
-                        <div class="form-label-group">
-                          <input id="inputEmail" type="email" name="email" class="form-control" placeholder="Email" required>
-                          <label for="inputEmail">Email</label>
-                        </div>
-                        <div class="form-label-group">
-                          <textarea id="inputMessage" class="form-control" name="message" placeholder="Message" rows="6" required></textarea>
-                          <label for="inputMessage">Message</label>
-                        </div>
-                        <hr>
-                        <button type="submit" class="btn btn-block btn-dark">Send Message</button>
-                      </div>
-                    </form>
-                  </div>
+        <div class="map-image image-bg">
+          <div class="row justify-content-md-center">
+            <div class="col-sm-12 col-md-6 mt-5">
+              <div class="formMessages"></div>
+              <form class="contact-form" method="POST" action="">
+                <div class="form-label-group">
+                  <input id="inputFname" type="text" name="fname" class="form-control" placeholder="First Name" required>
+                  <label for="inputFname">First Name</label>
                 </div>
-              </div>
+                <div class="form-label-group">
+                  <input id="inputLname" type="text" name="lname" class="form-control" placeholder="Last Name" required>
+                  <label for="inputLname">Last Name</label>
+                </div>
+                <div class="form-label-group">
+                  <input id="inputEmail" type="email" name="email" class="form-control" placeholder="Email" required>
+                  <label for="inputEmail">Email</label>
+                </div>
+                <div class="form-label-group">
+                  <textarea id="inputMessage" class="form-control" name="message" placeholder="Message" rows="6" required></textarea>
+                  <label for="inputMessage">Message</label>
+                </div>
+                <hr>
+                <button type="submit" class="btn btn-block btn-dark" style="float: right;">Send Message</button>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
 {% endblock %}
 
 
