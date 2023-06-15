@@ -1,4 +1,6 @@
-from flask import Blueprint, render_template, current_app, request, jsonify
+from flask import (
+    Blueprint, render_template, current_app, request, jsonify, url_for
+        )
 from personalwebsite import db, mail
 from personalwebsite.models import Myself, Contact
 from flask_mail import Message
@@ -8,7 +10,8 @@ main = Blueprint('main', __name__)
 
 
 @main.route('/')
-def index():
+@main.route('/<about>')
+def index(about=None):
     myid = int(current_app.config['MYSELF_ID'])
     me = db.get_or_404(Myself, myid)
     contacts = db.session.execute(
@@ -18,8 +21,13 @@ def index():
                 me_id=myid, contact_type="email")).scalar()
     contacts = [contact for contact in contacts
                 if contact.contact_type != "email"]
-
-    return render_template('index.html', me=me, email=email, contacts=contacts)
+    if about == 'about':
+        profile_photo = url_for('static', filename='images/'+me.profile_photo)
+        return render_template('about.html', me=me, email=email,
+                               contacts=contacts, profile_photo=profile_photo)
+    else:
+        return render_template('index.html', me=me, email=email,
+                               contacts=contacts)
 
 
 @main.route('/contact', methods=['POST', 'GET'])
