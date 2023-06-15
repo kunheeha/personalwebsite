@@ -11,102 +11,77 @@
       <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="" alt="" /></a>
       <ul class="navbar-nav text-uppercase ml-auto">
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Projects</a></li>
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Projects</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Blog</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Top Section -->
-  <section class="fullscreen about-user">
+  {% block topsection %}
+  {% endblock topsection %}
+
+  
+<section class="fullscreen">
+  {% block about %}
+  {% endblock about %}
+  <div class="projects section-separator bg-light">
     <div class="container">
-      <h1>About you</h1>
-      <div class="about-user-text" id="pseudo-loading"></div>
-      <div class="about-user-text"id="introduction-text"></div>
-      <div class="about-user-text"id="userinfo-text"></div>
-    </div>
-    <a id="scroll-down" style="display: none;" href="#about"><div class="scroll-down-symbol"></div></a>
-  </section>
-
-  <!-- Main Section -->
-  <section class="fullscreen">
-    <!-- About Me -->
-    <div class="about-me about-me-section-separator" id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <h1 class="h2">About Me</h1>
-            <p>{{ me.about }}</p>
+      <div class="text-center">
+        <h2>Personal Projects</h2>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="project-item shadow-1 white-bg">
+            <i class="fa fa-code iron-color"></i>
+            <h3>Hello</h3>
           </div>
-          <div class="col">
-            <ul>
-              {% for contact in contacts %}
-              <li><a target="_blank", href="{{ contact.link }}"><i class="{{ contact.fa_icon }}"></i>{{ contact.contact_type }}</a></li>
-              {% endfor %}
-            </ul>
+        </div>
+      </div>
+    </div> 
+  </div>
+  <div class="contact section-separator">
+    <div class="container">
+      <div class="text-center">
+        <h2>Contact Me</h2>
+      </div>
+      <div class="map-image image-bg">
+        <div class="row justify-content-md-center">
+          <div class="col-sm-12 col-md-6 mt-3">
+            <div class="formMessages"></div>
+            <form class="contact-form" method="POST" action="">
+              <div class="form-label-group">
+                <input id="inputFname" type="text" name="fname" class="form-control" placeholder="First Name" required>
+                <label for="inputFname">First Name</label>
+              </div>
+              <div class="form-label-group">
+                <input id="inputLname" type="text" name="lname" class="form-control" placeholder="Last Name" required>
+                <label for="inputLname">Last Name</label>
+              </div>
+              <div class="form-label-group">
+                <input id="inputEmail" type="email" name="email" class="form-control" placeholder="Email" required>
+                <label for="inputEmail">Email</label>
+              </div>
+              <div class="form-label-group">
+                <textarea id="inputMessage" class="form-control" name="message" placeholder="Message" rows="6" required></textarea>
+                <label for="inputMessage">Message</label>
+              </div>
+              <hr>
+              <div class="card">
+                <button type="submit" class="btn btn-block btn-dark">Send Message</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
-    <!-- Projects -->
-    <div class="projects section-separator bg-light">
-      <div class="container">
-        <div class="text-center">
-          <h2>Personal Projects</h2>
-        </div>
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="project-item shadow-1 white-bg">
-              <i class="fa fa-code iron-color"></i>
-              <h3>Hello</h3>
-            </div>
-          </div>
-        </div>
-      </div> 
-    </div>
-    <!-- Contact -->
-    <div class="contact section-separator">
-      <div class="container">
-        <div class="text-center">
-          <h2>Contact Me</h2>
-        </div>
-        <div class="map-image image-bg">
-          <div class="row justify-content-md-center">
-            <div class="col-sm-12 col-md-6 mt-3">
-              <div class="formMessages"></div>
-              <form class="contact-form" method="POST" action="">
-                <div class="form-label-group">
-                  <input id="inputFname" type="text" name="fname" class="form-control" placeholder="First Name" required>
-                  <label for="inputFname">First Name</label>
-                </div>
-                <div class="form-label-group">
-                  <input id="inputLname" type="text" name="lname" class="form-control" placeholder="Last Name" required>
-                  <label for="inputLname">Last Name</label>
-                </div>
-                <div class="form-label-group">
-                  <input id="inputEmail" type="email" name="email" class="form-control" placeholder="Email" required>
-                  <label for="inputEmail">Email</label>
-                </div>
-                <div class="form-label-group">
-                  <textarea id="inputMessage" class="form-control" name="message" placeholder="Message" rows="6" required></textarea>
-                  <label for="inputMessage">Message</label>
-                </div>
-                <hr>
-                <div class="card">
-                  <button type="submit" class="btn btn-block btn-dark">Send Message</button>
-                </div>
-              </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  </div>
+</section>
 {% endblock %}
 
 
 {% block scripts %}
-  <script src="{{ url_for('static', filename='js/aboutyou.js') }}"></script>
   <script src="{{ url_for('static', filename='js/email.js') }}"></script>
   <script src="{{ url_for('static', filename='js/scrolling.js') }}"></script>
-{% endblock %}
+  {% block pagescripts %}
+  {% endblock pagescripts %}
+{% endblock scripts %}

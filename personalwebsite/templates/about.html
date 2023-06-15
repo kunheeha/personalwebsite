@@ -1,128 +1,56 @@
-{% extends 'base.html' %}
-{% block head %}
-  <title>{{ me.first_name }} {{ me.last_name }}</title>
-
-{% endblock %}
-{% block body %}
-  <!-- NavBar -->
-  <nav class="navbar navbar-expand navbar-dark fixed-top" id="mainNav">
-    <div class="container">
-      <!-- to add something here or not to add, that is the question -->
-      <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="" alt="" /></a>
-      <ul class="navbar-nav text-uppercase ml-auto">
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Projects</a></li>
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Blog</a></li>
-      </ul>
+{% extends 'index.html' %}
+<!-- Top Section -->
+{% block topsection %}
+<header class="about-header">
+  <div class="container">
+    <div class="row">
+      <div class="about-info col-md-6 col-xs-12">
+        <h1>{{ me.first_name }} {{ me.last_name }}</h1>
+        <h2>Developer</h2>
+        <div class="contact-links">
+          <ul>
+            <li><a><i class="{{ email.fa_icon }}"></i>{{ email.link }}</a></li>
+          </ul>
+          <ul class="social-icon">
+            {% for contact in contacts %}
+            <li><a target="_blank", href="{{ contact.link }}"><i class="{{ contact.fa_icon }}"></i></a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 d-sm-none d-md-block">
+        <div class="p-img">
+          <img src="{{ profile_photo }}" alt="">
+        </div>
+      </div>
     </div>
-  </nav>
+  </div>
+</header>
+{% endblock topsection %}
 
-  <!-- Top Section -->
-  <header class="about-header">
+{% block about %}
+  <div class="about-me about-me-section-separator" id="about">
     <div class="container">
       <div class="row">
-        <div class="about-info col-md-6 col-xs-12">
-          <h1>{{ me.first_name }} {{ me.last_name }}</h1>
-          <h2>Developer</h2>
-          <div class="contact-links">
-            <ul>
-              <li><a><i class="{{ email.fa_icon }}"></i>{{ email.link }}</a></li>
-            </ul>
-            <ul class="social-icon">
-              {% for contact in contacts %}
-              <li><a target="_blank", href="{{ contact.link }}"><i class="{{ contact.fa_icon }}"></i></a></li>
-              {% endfor %}
-            </ul>
-          </div>
+        <div class="col-md-6 col-sm-12">
+          <h1 class="h2">About</h1>
+          <p>{{ me.about }}</p>
         </div>
-        <div class="col-md-6 d-sm-none d-md-block">
-          <div class="p-img">
-            <img src="{{ profile_photo }}" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main Section -->
-  <section class="">
-    <!-- About Me -->
-    <div class="about-me about-me-section-separator" id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <h1 class="h2">About Me</h1>
-            <p>{{ me.about }}</p>
-          </div>
-          <div class="col-md-1 d-md-block d-sm-none"></div>
-          <div class="col-md-5 col-sm-12">
+        <div class="col-md-1 d-md-block d-sm-none"></div>
+        <div class="col-md-5 col-sm-12">
+          <h2 class="h4">my skills</h2>
+          <div class="skill-tags">
             <ul>
-              {% for contact in contacts %}
-              <li><a target="_blank", href="{{ contact.link }}"><i class="{{ contact.fa_icon }}"></i>{{ contact.contact_type }}</a></li>
+              {% for skill in skills %}
+              <li><span>{{ skill.skill }}</span></li>
               {% endfor %}
             </ul>
           </div>
         </div>
       </div>
     </div>
-    <!-- Projects -->
-    <div class="projects section-separator bg-light">
-      <div class="container">
-        <div class="text-center">
-          <h2>Personal Projects</h2>
-        </div>
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="project-item shadow-1 white-bg">
-              <i class="fa fa-code iron-color"></i>
-              <h3>Hello</h3>
-            </div>
-          </div>
-        </div>
-      </div> 
-    </div>
-    <!-- Contact -->
-    <div class="contact section-separator">
-      <div class="container">
-        <div class="text-center">
-          <h2>Contact Me</h2>
-        </div>
-        <div class="map-image image-bg">
-          <div class="row justify-content-md-center">
-            <div class="col-sm-12 col-md-6 mt-3">
-              <div class="formMessages"></div>
-              <form class="contact-form" method="POST" action="">
-                <div class="form-label-group">
-                  <input id="inputFname" type="text" name="fname" class="form-control" placeholder="First Name" required>
-                  <label for="inputFname">First Name</label>
-                </div>
-                <div class="form-label-group">
-                  <input id="inputLname" type="text" name="lname" class="form-control" placeholder="Last Name" required>
-                  <label for="inputLname">Last Name</label>
-                </div>
-                <div class="form-label-group">
-                  <input id="inputEmail" type="email" name="email" class="form-control" placeholder="Email" required>
-                  <label for="inputEmail">Email</label>
-                </div>
-                <div class="form-label-group">
-                  <textarea id="inputMessage" class="form-control" name="message" placeholder="Message" rows="6" required></textarea>
-                  <label for="inputMessage">Message</label>
-                </div>
-                <hr>
-                <div class="card">
-                  <button type="submit" class="btn btn-block btn-dark">Send Message</button>
-                </div>
-              </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+{% endblock about %}
 
-{% endblock %}
-
-
-{% block scripts %}
-  <script src="{{ url_for('static', filename='js/email.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/scrolling.js') }}"></script>
-{% endblock %}
+{% block pagescripts %}
+{% endblock pagescripts %}

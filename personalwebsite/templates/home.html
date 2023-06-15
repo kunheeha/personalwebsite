@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+
+<!-- Top Section -->
+{% block topsection %}
+<section class="fullscreen about-user">
+  <div class="container">
+    <h1>About you</h1>
+    <div class="about-user-text" id="pseudo-loading"></div>
+    <div class="about-user-text"id="introduction-text"></div>
+    <div class="about-user-text"id="userinfo-text"></div>
+  </div>
+  <a id="scroll-down" style="display: none;" href="#about"><div class="scroll-down-symbol"></div></a>
+</section>
+{% endblock topsection %}
+
+{% block about %}
+  <div class="about-me about-me-section-separator" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <h1 class="h2">About Me</h1>
+          <p>{{ me.about }}</p>
+        </div>
+        <div class="col-md-1 d-md-block d-sm-none"></div>
+        <div class="col-md-5 col-sm-12">
+          <ul>
+            {% for contact in contacts %}
+            <li><a target="_blank", href="{{ contact.link }}"><i class="{{ contact.fa_icon }}"></i>{{ contact.contact_type }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock about %}
+
+{% block pagescripts %}
+  <script src="{{ url_for('static', filename='js/aboutyou.js') }}"></script>
+{% endblock pagescripts %}

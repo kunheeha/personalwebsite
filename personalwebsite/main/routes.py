@@ -2,7 +2,7 @@ from flask import (
     Blueprint, render_template, current_app, request, jsonify, url_for
         )
 from personalwebsite import db, mail
-from personalwebsite.models import Myself, Contact
+from personalwebsite.models import Myself, Contact, Skill
 from flask_mail import Message
 
 
@@ -23,10 +23,12 @@ def index(about=None):
                 if contact.contact_type != "email"]
     if about == 'about':
         profile_photo = url_for('static', filename='images/'+me.profile_photo)
+        skills = db.session.execute(db.select(Skill)).scalars().all()
         return render_template('about.html', me=me, email=email,
-                               contacts=contacts, profile_photo=profile_photo)
+                               contacts=contacts, skills=skills,
+                               profile_photo=profile_photo)
     else:
-        return render_template('index.html', me=me, email=email,
+        return render_template('home.html', me=me, email=email,
                                contacts=contacts)
 
 
