@@ -151,9 +151,14 @@ function typePseudoLoadingText(text, element, delay) {
   type();
 }
 
-function showScrollDown() {
-  const scrollDown = document.getElementById("scroll-down");
-  scrollDown.style.display = "block";
+//function showScrollDown() {
+//  const scrollDown = document.getElementById("scroll-down");
+//  scrollDown.style.display = "block";
+//}
+
+function showAboutMe() {
+  const aboutMe = document.getElementById("about-me-link");
+  aboutMe.style.display = "block";
 }
 
 function typeAbout(delay) {
@@ -168,13 +173,13 @@ function typeAbout(delay) {
         .then(data => {
           let userInfo = `You are located in ${data.city}, ${data.region}, your public ip is ${data.ip}, and your internet provider seems to be ${data.org}.`;
           let waitTime =typeout(userInfo, elementUserInfo, delay);
-          setTimeout(showScrollDown, waitTime);
+          setTimeout(showAboutMe, waitTime);
         })
         .catch(error => {
           console.log("ipinfo error: ", error);
           let userInfo = ". . . and your device managed to stop me from getting information about your location and internet provider.";
           let waitTime =typeout(userInfo, elementUserInfo, delay);
-          setTimeout(showScrollDown, waitTime);
+          setTimeout(showAboutMe, waitTime);
         })
     }
     setTimeout(typeUserInfo, waitTime);

@@ -10,78 +10,28 @@
       <!-- to add something here or not to add, that is the question -->
       <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="" alt="" /></a>
       <ul class="navbar-nav text-uppercase ml-auto">
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('main.about') }}">About</a></li>
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Projects</a></li>
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Blog</a></li>
       </ul>
     </div>
   </nav>
 
-  {% block topsection %}
-  {% endblock topsection %}
-
-  
-<section class="fullscreen">
-  {% block about %}
-  {% endblock about %}
-  <div class="projects section-separator bg-light">
+  <section class="fullscreen landing-page">
     <div class="container">
-      <div class="text-center">
-        <h2>Personal Projects</h2>
-      </div>
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="project-item shadow-1 white-bg">
-            <i class="fa fa-code iron-color"></i>
-            <h3>Hello</h3>
-          </div>
-        </div>
-      </div>
-    </div> 
-  </div>
-  <div class="contact section-separator">
-    <div class="container">
-      <div class="text-center">
-        <h2>Contact Me</h2>
-      </div>
-      <div class="map-image image-bg">
-        <div class="row justify-content-md-center">
-          <div class="col-sm-12 col-md-6 mt-3">
-            <div class="formMessages"></div>
-            <form class="contact-form" method="POST" action="">
-              <div class="form-label-group">
-                <input id="inputFname" type="text" name="fname" class="form-control" placeholder="First Name" required>
-                <label for="inputFname">First Name</label>
-              </div>
-              <div class="form-label-group">
-                <input id="inputLname" type="text" name="lname" class="form-control" placeholder="Last Name" required>
-                <label for="inputLname">Last Name</label>
-              </div>
-              <div class="form-label-group">
-                <input id="inputEmail" type="email" name="email" class="form-control" placeholder="Email" required>
-                <label for="inputEmail">Email</label>
-              </div>
-              <div class="form-label-group">
-                <textarea id="inputMessage" class="form-control" name="message" placeholder="Message" rows="6" required></textarea>
-                <label for="inputMessage">Message</label>
-              </div>
-              <hr>
-              <div class="card">
-                <button type="submit" class="btn btn-block btn-dark">Send Message</button>
-              </div>
-            </form>
-          </div>
-        </div>
+      <h1>About you</h1>
+      <div class="about-user-text" id="pseudo-loading"></div>
+      <div class="about-user-text"id="introduction-text"></div>
+      <div class="about-user-text"id="userinfo-text"></div>
+      <div class="about-me-link">
+        <a id="about-me-link" href="{{ url_for('main.about') }}">About me</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
 {% endblock %}
 
 
 {% block scripts %}
-  <script src="{{ url_for('static', filename='js/email.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/scrolling.js') }}"></script>
-  {% block pagescripts %}
-  {% endblock pagescripts %}
+  <script src="{{ url_for('static', filename='js/aboutyou.js') }}"></script>
 {% endblock scripts %}

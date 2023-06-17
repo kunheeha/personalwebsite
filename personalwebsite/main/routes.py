@@ -10,8 +10,14 @@ main = Blueprint('main', __name__)
 
 
 @main.route('/')
-@main.route('/<about>')
-def index(about=None):
+def index():
+    myid = int(current_app.config['MYSELF_ID'])
+    me = db.get_or_404(Myself, myid)
+    return render_template('index.html', me=me)
+
+
+@main.route('/about')
+def about():
     myid = int(current_app.config['MYSELF_ID'])
     me = db.get_or_404(Myself, myid)
     contacts = db.session.execute(
@@ -21,15 +27,12 @@ def index(about=None):
                 me_id=myid, contact_type="email")).scalar()
     contacts = [contact for contact in contacts
                 if contact.contact_type != "email"]
-    if about == 'about':
-        profile_photo = url_for('static', filename='images/'+me.profile_photo)
-        skills = db.session.execute(db.select(Skill)).scalars().all()
-        return render_template('about.html', me=me, email=email,
-                               contacts=contacts, skills=skills,
-                               profile_photo=profile_photo)
-    else:
-        return render_template('home.html', me=me, email=email,
-                               contacts=contacts)
+    profile_photo = url_for('static', filename='images/'+me.profile_photo)
+    skills = db.session.execute(db.select(Skill)).scalars().all()
+
+    return render_template('about.html', me=me, email=email,
+                           contacts=contacts, skills=skills,
+                           profile_photo=profile_photo)
 
 
 @main.route('/contact', methods=['POST', 'GET'])
