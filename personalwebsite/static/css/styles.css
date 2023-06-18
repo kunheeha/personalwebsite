@@ -383,9 +383,8 @@ ul li {
 /* Projects */
 /* ---------------------------------- */
 
-.projects .project-item {
-  padding: 20px;
-  border-radius: 4px;
+.project-item {
+  perspective: 1000px;
 }
 
 .shadow-1 {
@@ -393,6 +392,25 @@ ul li {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
+.project-item-inner {
+  padding: 20px;
+  border-radius: 4px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.project-item:hover .project-item-inner {
+  transform: rotateY(180deg);
+}
+
+.project-item-front, .project-item-back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.project-item-back {
+  transform: rotateY(180deg);
+}
 /* ---------------------------------- */
 /* Contact */
 /* ---------------------------------- */
