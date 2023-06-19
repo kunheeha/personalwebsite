@@ -20,7 +20,6 @@ class Contact(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     contact_type = db.Column(db.String, nullable=False)
     link = db.Column(db.String, nullable=False)
-    fa_icon = db.Column(db.String(50), nullable=False, default="fa-link")
     me_id = db.Column(db.Integer, db.ForeignKey("me.id"))
 
 

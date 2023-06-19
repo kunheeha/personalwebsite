@@ -1,3 +1,4 @@
+{% from 'macros/macros.html' import contact_icon %}
 {% extends 'base.html' %}
 
 {% block head %}
@@ -27,11 +28,11 @@
         <h2>Developer</h2>
         <div class="contact-links">
           <ul>
-            <li><a><i class="{{ email.fa_icon }}"></i>{{ email.link }}</a></li>
+            <li><a>{{ contact_icon(email.contact_type) }}{{ email.link }}</a></li>
           </ul>
           <ul class="social-icon">
             {% for contact in contacts %}
-            <li><a target="_blank", href="{{ contact.link }}"><i class="{{ contact.fa_icon }}"></i></a></li>
+            <li><a target="_blank", href="{{ contact.link }}">{{ contact_icon(contact.contact_type) }}</a></li>
             {% endfor %}
           </ul>
         </div>

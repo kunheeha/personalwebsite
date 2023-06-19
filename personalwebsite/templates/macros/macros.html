@@ -1,0 +1,21 @@
+{% macro contact_icon(type) -%}
+{% if type == "github" %}
+  <i class="fa-brands fa-github"></i>
+{% elif type == "linkedin" %}
+  <i class="fa-brands fa-linkedin"></i>
+{% elif type == "stackoverflow" %}
+  <i class="fa-brands fa-stack-overflow"></i>
+{% elif type == "email" %}
+  <i class="fa-solid fa-envelope"></i>
+{% else %}
+  <i class="fa-solid fa-link"></i>
+{% endif %}
+{%- endmacro %}
+
+{% macro project_icon(webapp) -%}
+{% if webapp %}
+  <i class="fa-solid fa-code"></i>
+{% else %}
+  <i class="fa-regular fa-object-ungroup"></i>
+{% endif %}
+{%- endmacro %}
