@@ -9,7 +9,7 @@ login_manager = LoginManager()
 mail = Mail()
 
 
-def create_app_from_config():
+def create_app():
     from personalwebsite.config import Config
 
     app = Flask(__name__)

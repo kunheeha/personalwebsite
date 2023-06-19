@@ -1,6 +1,6 @@
-from personalwebsite import create_app_from_config
+from personalwebsite import create_app
 
-app = create_app_from_config()
+app = create_app()
 
 if __name__ == "__main__":
     app.run(debug=True)
