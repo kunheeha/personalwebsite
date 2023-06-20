@@ -411,6 +411,18 @@ ul li {
 .project-item-back {
   transform: rotateY(180deg);
 }
+
+.project-item-front h3 {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.project-item-front i {
+  font-size: 25px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
 /* ---------------------------------- */
 /* Contact */
 /* ---------------------------------- */

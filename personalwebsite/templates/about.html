@@ -1,4 +1,4 @@
-{% from 'macros/macros.html' import contact_icon %}
+{% from 'macros/macros.html' import contact_icon, project_icon %}
 {% extends 'base.html' %}
 
 {% block head %}
@@ -76,17 +76,20 @@
       <h2>Personal Projects</h2>
     </div>
     <div class="row">
-      <div class="col-sm-4">
+      {% for project in projects %}
+      <div class="col-sm-3">
         <div class="project-item">
           <div class="project-item-inner shadow-1 white-bg">
             <div class="project-item-front white-bg">
-              <h1>Front</h1>
+              {{ project_icon(project.webapp) }}
+              <h3 class="h2">{{ project.name }}</h3>
             </div>
             <div class="project-item-back white-bg">
-              <h1>Back</h1>
+            </div>
           </div>
         </div>
       </div>
+      {% endfor %}
     </div>
   </div> 
 </section>
