@@ -86,7 +86,7 @@
             </div>
             <div class="project-item-back white-bg">
               <h3 class="h4">{{ project.name }}</h3>
-              <p>this is a test</p>
+              <p>{{ project.brief }}</p>
               <div class="project-links">
                 <span style="float:left;"><a href="{{ project.source_code_link }}" target="_blank">source code</a></span>
                 {% if project.webapp and project.deployed %}
