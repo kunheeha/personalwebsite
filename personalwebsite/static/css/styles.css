@@ -423,13 +423,15 @@ ul li {
 
 .project-item-front h3 {
   text-align: center;
-  margin-bottom: 28px;
+  opacity: 0.95;
+  margin-top: 20px;
 }
 
 .project-item-front i {
   font-size: 25px;
   margin-bottom: 10px;
   margin-top: 10px;
+  opacity: 0.8;
 }
 
 .project-item-back h3 {
@@ -442,6 +444,22 @@ ul li {
   width: 100%;
 }
 
+.project-page-link {
+  text-align: center;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 100;
+  opacity: 0.6;
+  margin-top: 50px;
+}
+
+.internal-links {
+  color: black;
+  text-decoration: none;
+}
+
+.internal-links:hover {
+  cursor: pointer;
+}
 /* ---------------------------------- */
 /* Contact */
 /* ---------------------------------- */
