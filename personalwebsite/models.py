@@ -27,3 +27,13 @@ class Skill(db.Model):
     __tablename__ = "skills"
     id = db.Column(db.Integer, primary_key=True)
     skill = db.Column(db.String, nullable=False, default="Arch btw")
+
+
+class Project(db.Model):
+    __tablename__ = "projects"
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, nullable=False)
+    source_code_link = db.Column(db.String, nullable=False)
+    webapp = db.Column(db.Boolean, nullable=False, default=False)
+    deployed = db.Column(db.Boolean, nullable=False, default=False)
+    live_link = db.Column(db.String)
