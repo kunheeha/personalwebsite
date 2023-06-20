@@ -51,11 +51,11 @@ def contact():
         to_send = Message(subject='Message Received',
                           sender='kunheeha@gmail.com',
                           recipients=[sender_email])
-        to_receive.html = render_template('to_me.html',
+        to_receive.html = render_template('email_templates/to_me.html',
                                           sender_name=sender_name,
                                           sender_email=sender_email,
                                           sender_message=sender_message)
-        to_send.html = render_template('autoresponse.html',
+        to_send.html = render_template('email_templates/autoresponse.html',
                                        sender_name=sender_name)
 
         try:
