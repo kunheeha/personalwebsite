@@ -385,6 +385,9 @@ ul li {
 
 .project-item {
   perspective: 1000px;
+  height: 200px;
+  width: 300px;
+  margin-right: 50%;
 }
 
 .shadow-1 {
@@ -397,6 +400,9 @@ ul li {
   border-radius: 4px;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .project-item:hover .project-item-inner {
@@ -406,6 +412,9 @@ ul li {
 .project-item-front, .project-item-back {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  position: absolute;
+  width: 86%;
+  height: 80%;
 }
 
 .project-item-back {
