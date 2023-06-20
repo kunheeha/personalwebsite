@@ -432,6 +432,12 @@ ul li {
   margin-top: 10px;
 }
 
+.project-links {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
 /* ---------------------------------- */
 /* Contact */
 /* ---------------------------------- */
