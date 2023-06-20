@@ -37,3 +37,6 @@ class Project(db.Model):
     webapp = db.Column(db.Boolean, nullable=False, default=False)
     deployed = db.Column(db.Boolean, nullable=False, default=False)
     live_link = db.Column(db.String)
+    brief = db.Column(db.String, nullable=False,
+                      server_default="a plan for world domination",
+                      default="a plan for world domination")
