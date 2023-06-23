@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css') }}">
+  <title>Projects</title>
+{% endblock head %}
+
+{% block body %}
+<!-- NavBar -->
+<nav class="navbar navbar-shrink navbar-expand navbar-dark fixed-top" id="mainNav">
+  <div class="container">
+    <!-- to add something here or not to add, that is the question -->
+    <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="" alt="" /></a>
+    <ul class="navbar-nav text-uppercase ml-auto">
+      <li class="nav-item"><a class="nav-link" href="{{ url_for('main.about') }}">About</a></li>
+      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
+      <li class="nav-item"><a class="nav-link" href="">Blog</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Header -->
+<header class="projects-header">
+  <div class="container">
+    <h1>personal projects</h1>
+    <p>noun: /ˈpɜːrsənəl ˈprɒdʒɛkts/</p>
+    <h3>a collection of random things I made in my spare time</h3>
+  </div>
+</header>
+
+<!-- Main -->
+<section class="projects-main bg-light" id="projects">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3">
+
+      <div class="col mb-4">
+        <a href="#">
+          <div class="project-item white-bg">
+            <h4>Testing 1</h4>
+            <p>This is a test text 1</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock body %}
+
+{% block scripts %}
+<script>
+document.querySelectorAll('a.js-scroll-trigger[href*="#"]:not([href="#"])').forEach(link => {
+  link.onclick = function() {
+    if (location.pathname.replace(/^\//, "") == link.pathname.replace(/^\//, "")) {
+      document.querySelector(link.hash).scrollIntoView({ behavior: "smooth" });
+      return false;
+    }
+  }
+});
+</script>
+{% endblock scripts %}

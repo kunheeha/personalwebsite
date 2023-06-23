@@ -64,3 +64,9 @@ def contact():
             return jsonify(status=True)
         except Exception:
             return jsonify(status=False)
+
+
+@main.route('/projects')
+def projects():
+    projects = db.session.execute(db.select(Project)).scalars().all()
+    return render_template('projects.html', projects=projects)
