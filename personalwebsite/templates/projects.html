@@ -34,7 +34,7 @@
     <div class="row row-cols-1 row-cols-md-3">
       {% for project in projects %}
       <div class="col mb-5 mr-5">
-        <a href="#">
+        <a href="{{ url_for('main.project_view', project_id=project.id) }}">
           <div class="project-item white-bg">
             <h4>{{ project.name }}</h4>
             <p>{{ project.brief }}</p>
