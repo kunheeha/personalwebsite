@@ -25,13 +25,13 @@
   <div class="container">
     <div class="row">
       <div class="about-info col-md-6 col-xs-12">
-        <h1>{{ me.first_name }} {{ me.last_name }}</h1>
-        <h2>Developer</h2>
+        <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">{{ me.first_name }} {{ me.last_name }}</h1>
+        <h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">Developer</h2>
         <div class="contact-links">
           <ul>
-            <li><a>{{ contact_icon(email.contact_type) }}{{ email.link }}</a></li>
+            <li data-aos="fade-up" data-aos-duration="800" data-aos-delay="400"><a>{{ contact_icon(email.contact_type) }}{{ email.link }}</a></li>
           </ul>
-          <ul class="social-icon">
+          <ul class="social-icon" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
             {% for contact in contacts %}
             <li><a target="_blank", href="{{ contact.link }}">{{ contact_icon(contact.contact_type) }}</a></li>
             {% endfor %}
@@ -39,7 +39,7 @@
         </div>
       </div>
       <div class="col-md-6 d-sm-none d-md-block">
-        <div class="p-img">
+        <div class="p-img" data-aos="fade" data-aos-duration="1000" data-aos-delay="600">
           <img src="{{ profile_photo }}" alt="">
         </div>
       </div>
@@ -52,14 +52,14 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-12">
-        <h1 class="h2">About</h1>
-        <p>{{ me.about }}</p>
+        <h1 class="h2" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">About</h1>
+        <p data-aos="fade" data-aos-duration="900" data-aos-delay="300">{{ me.about }}</p>
       </div>
       <div class="col-md-1 d-md-block d-sm-none"></div>
       <div class="col-md-5 col-sm-12">
-        <h2 class="h4">my skills</h2>
+        <h2 class="h4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">my skills</h2>
         <div class="skill-tags">
-          <ul>
+          <ul data-aos="fade" data-aos-duration="900" data-aos-delay="400">
             {% for skill in skills %}
             <li><span>{{ skill.skill }}</span></li>
             {% endfor %}
@@ -74,12 +74,12 @@
 <section class="projects section-separator bg-light">
   <div class="container">
     <div class="text-center">
-      <h2>Personal Projects</h2>
+      <h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">Personal Projects</h2>
     </div>
     <div class="row">
       {% for project in projects %}
       <div class="col-12 col-sm-6 col-xl-3">
-        <div class="project-item">
+        <div class="project-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
           <div class="project-item-inner shadow-1 white-bg">
             <div class="project-item-front white-bg">
               {{ project_icon(project.webapp) }}
@@ -101,7 +101,7 @@
       {% endfor %}
     </div>
     <div class="project-page-link">
-      <a class="internal-links" href="{{ url_for('main.projects') }}">VIEW ALL</a>
+      <a class="internal-links" href="{{ url_for('main.projects') }}" data-aos="fade" data-aos-duration="800" data-aos-delay="600">VIEW ALL</a>
     </div>
   </div> 
 </section>
@@ -109,32 +109,32 @@
 <section class="contact section-separator">
   <div class="container">
     <div class="text-center">
-      <h2>Contact Me</h2>
+      <h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">Contact Me</h2>
     </div>
     <div class="map-image image-bg">
       <div class="row justify-content-md-center">
         <div class="col-sm-12 col-md-6 mt-3">
           <div class="formMessages"></div>
           <form class="contact-form" method="POST" action="">
-            <div class="form-label-group">
+            <div class="form-label-group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
               <input id="inputFname" type="text" name="fname" class="form-control" placeholder="First Name" required>
               <label for="inputFname">First Name</label>
             </div>
-            <div class="form-label-group">
+            <div class="form-label-group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
               <input id="inputLname" type="text" name="lname" class="form-control" placeholder="Last Name" required>
               <label for="inputLname">Last Name</label>
             </div>
-            <div class="form-label-group">
+            <div class="form-label-group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
               <input id="inputEmail" type="email" name="email" class="form-control" placeholder="Email" required>
               <label for="inputEmail">Email</label>
             </div>
-            <div class="form-label-group">
+            <div class="form-label-group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
               <textarea id="inputMessage" class="form-control" name="message" placeholder="Message" rows="6" required></textarea>
               <label for="inputMessage">Message</label>
             </div>
             <hr>
             <div class="card">
-              <button type="submit" class="btn btn-block btn-dark">Send Message</button>
+              <button type="submit" class="btn btn-block btn-dark" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">Send Message</button>
             </div>
           </form>
         </div>
