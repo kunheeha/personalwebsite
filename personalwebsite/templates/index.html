@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
   <title>{{ me.first_name }} {{ me.last_name }}</title>
 
 {% endblock %}
@@ -10,9 +11,9 @@
       <!-- to add something here or not to add, that is the question -->
       <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="" alt="" /></a>
       <ul class="navbar-nav text-uppercase ml-auto">
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('main.about') }}">About</a></li>
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Projects</a></li>
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.about') }}">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.projects') }}">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="">Blog</a></li>
       </ul>
     </div>
   </nav>

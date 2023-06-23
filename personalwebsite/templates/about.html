@@ -2,6 +2,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
   <title>{{ me.first_name }} {{ me.last_name }}</title>
 {% endblock %}
 
@@ -13,8 +14,8 @@
     <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="" alt="" /></a>
     <ul class="navbar-nav text-uppercase ml-auto">
       <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Projects</a></li>
-      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Blog</a></li>
+      <li class="nav-item"><a class="nav-link" href="{{ url_for('main.projects') }}">Projects</a></li>
+      <li class="nav-item"><a class="nav-link" href="">Blog</a></li>
     </ul>
   </div>
 </nav>
@@ -77,7 +78,7 @@
     </div>
     <div class="row">
       {% for project in projects %}
-      <div class="col-3">
+      <div class="col-12 col-sm-6 col-xl-3">
         <div class="project-item">
           <div class="project-item-inner shadow-1 white-bg">
             <div class="project-item-front white-bg">
@@ -100,7 +101,7 @@
       {% endfor %}
     </div>
     <div class="project-page-link">
-      <a class="internal-links" href="#">VIEW ALL</a>
+      <a class="internal-links" href="{{ url_for('main.projects') }}">VIEW ALL</a>
     </div>
   </div> 
 </section>
