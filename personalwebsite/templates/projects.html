@@ -32,16 +32,16 @@
 <section class="projects-main bg-light" id="projects">
   <div class="container">
     <div class="row row-cols-1 row-cols-md-3">
-
-      <div class="col mb-4">
+      {% for project in projects %}
+      <div class="col mb-5 mr-5">
         <a href="#">
           <div class="project-item white-bg">
-            <h4>Testing 1</h4>
-            <p>This is a test text 1</p>
+            <h4>{{ project.name }}</h4>
+            <p>{{ project.brief }}</p>
           </div>
         </a>
       </div>
-
+      {% endfor %}
     </div>
   </div>
 </section>
