@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/@fortawesome/fontawesome-free/css/solid.css') }}">
     <!-- Animate.css -->
     <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/animate.css/animate.css') }}">
+    <!-- AOS css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/aos/dist/aos.css') }}">
 
     <!-- My stuff -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
@@ -31,6 +33,11 @@
   
     <!-- Bootstrap -->
     <script src="{{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- AOS -->
+    <script src="{{ url_for('static', filename='node_modules/aos/dist/aos.js') }}"></script>
+    <script>
+      AOS.init();
+    </script>
     <!-- My Stuff -->
     {% block scripts %}{% endblock %}
   </body>
