@@ -6,4 +6,4 @@ read MESSAGE
 
 export FLASK_APP=personalwebsite
 
-flask db migrate -m $MESSAGE
+flask db migrate -m "$MESSAGE"

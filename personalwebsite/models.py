@@ -40,3 +40,4 @@ class Project(db.Model):
     brief = db.Column(db.String, nullable=False,
                       server_default="a plan for world domination",
                       default="a plan for world domination")
+    show_on_main = db.Column(db.Boolean, default=False, server_default="false")

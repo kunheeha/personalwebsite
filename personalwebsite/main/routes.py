@@ -29,7 +29,9 @@ def about():
                 if contact.contact_type != "email"]
     profile_photo = url_for('static', filename='images/'+me.profile_photo)
     skills = db.session.execute(db.select(Skill)).scalars().all()
-    projects = db.session.execute(db.select(Project).limit(4)).scalars().all()
+    projects = db.session.execute(
+            db.select(Project).filter_by(show_on_main=True).limit(4)
+            ).scalars().all()
 
     return render_template('about.html', me=me, email=email,
                            contacts=contacts, projects=projects, skills=skills,
