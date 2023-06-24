@@ -1,4 +1,5 @@
 from personalwebsite import db
+from datetime import datetime
 
 
 class Myself(db.Model):
@@ -41,3 +42,20 @@ class Project(db.Model):
                       server_default="a plan for world domination",
                       default="a plan for world domination")
     show_on_main = db.Column(db.Boolean, default=False, server_default="false")
+
+
+class VisitorInfo(db.Model):
+    __tablename__ = "visitors"
+    id = db.Column(db.Integer, primary_key=True)
+    date_visited = db.Column(db.DateTime, nullable=False,
+                             default=datetime.utcnow)
+    ip = db.Column(db.String)
+    browser = db.Column(db.String(20))
+    operating_system = db.Column(db.String(10))
+    device_type = db.Column(db.String(10))
+    country = db.Column(db.String(5))
+    region = db.Column(db.String(50))
+    city = db.Column(db.String(50))
+    postal = db.Column(db.String(10))
+    timezone = db.Column(db.String(20))
+    page = db.Column(db.String(10))

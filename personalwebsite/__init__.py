@@ -23,7 +23,9 @@ def create_app():
     mail.init_app(app)
 
     from personalwebsite.main.routes import main
+    from personalwebsite.logger.routes import logger
     app.register_blueprint(main)
+    app.register_blueprint(logger)
 
     return app
 

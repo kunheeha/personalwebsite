@@ -1,71 +1,4 @@
-// Type out
-function typeout(text, element, delay) {
-  const letters = text.split("");
-  let i = 0;
-  function type() {
-    if (i < letters.length) {
-      element.append(letters[i]);
-      i++;
-      setTimeout(type, delay)
-    }
-  }
-  type();
-  return letters.length * delay;
-}
-
-// Clear out
-function clearout(element) {
-  element.innerHTML = "";
-}
-
-// Get browser information
-function getBrowser(info) {
-  let browser;
-  // Opera
-  if (info.includes("OPR")) {
-    browser = "Opera";
-  }
-  // Microsoft Edge
-  else if (info.includes("Edg")) {
-    browser = "Microsoft Edge";
-  }
-  // Firefox
-  else if (info.includes("Firefox")) {
-    browser = "Firefox";
-  }
-  // Chrome
-  else if (info.includes("Chrome")) {
-    browser = "Chrome";
-  }
-  else if (info.includes("Safari")) {
-    browser = "Safari";
-  }
-  return browser;
-}
-
-
-// Get device operating system
-function getOperatingSystem(info) {
-  let os;
-  let matcher = /\((?<os>[A-Z][A-Za-z0-9]+)(\s|;)/;
-  switch (matcher.exec(info).groups.os) {
-    case "X11":
-      os = "Linux"
-      break;
-    case "Windows":
-      os = "Windows"
-      break;
-    case "Macintosh":
-      os ="MacOS"
-      break;
-    default:
-      os = null;
-      break;
-  }
-  return os
-}
-
-
+import { typeout, clearout, getBrowser, getOperatingSystem, browserInfo } from "./utils.js";
 // Get device type
 function getDeviceType(info) {
   let device;
@@ -104,7 +37,6 @@ function getDeviceInfo(operatingSystem, screenSize, browserInfo) {
 
 
 const pseudoLoadingText = "Getting your info";
-const browserInfo = navigator.userAgent;
 const screenSize = `${window.screen.width}x${window.screen.height}`;
 const operatingSystem = getDeviceType(browserInfo).operatingSystem;
 const deviceInfo = getDeviceInfo(operatingSystem, screenSize, browserInfo);
@@ -178,7 +110,7 @@ function typeAbout(delay) {
         .catch(error => {
           console.log("ipinfo error: ", error);
           let userInfo = ". . . and your device managed to stop me from getting information about your location and internet provider.";
-          let waitTime =typeout(userInfo, elementUserInfo, delay);
+          let waitTime = typeout(userInfo, elementUserInfo, delay);
           setTimeout(showAboutMe, waitTime);
         })
     }
