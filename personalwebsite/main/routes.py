@@ -74,7 +74,7 @@ def projects():
     return render_template('projects.html', projects=projects)
 
 
-@main.route('/project/<int:project_id>')
-def project_view(project_id):
-    project = db.get_or_404(Project, project_id)
-    return render_template('placeholder.html')
+# @main.route('/project/<int:project_id>')
+# def project_view(project_id):
+#     project = db.get_or_404(Project, project_id)
+#     return render_template('placeholder.html')
