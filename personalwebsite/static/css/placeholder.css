@@ -1,0 +1,27 @@
+.landing-page {
+  color: #FFF;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/blur-background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.landing-page .container {
+  padding-top: 280px;
+}
+
+.sendaway {
+  margin-top: 50%;
+  text-align: right;
+}
+
+.sendaway a {
+  font-style: italic;
+  text-decoration: none;
+  color: #fff;
+}
+
+.sendaway a:hover {
+  cursor: pointer;
+  color: #778899;
+}

@@ -6,5 +6,5 @@ blog = Blueprint('blog', __name__)
 
 
 @blog.route('/blog')
-def blog():
+def index():
     return render_template('placeholder.html')
