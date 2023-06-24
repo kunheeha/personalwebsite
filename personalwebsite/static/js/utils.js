@@ -48,20 +48,24 @@ function getBrowser(info) {
 function getOperatingSystem(info) {
   let os;
   let matcher = /\((?<os>[A-Z][A-Za-z0-9]+)(\s|;)/;
-  switch (matcher.exec(info).groups.os) {
-    case "X11":
-      os = "Linux"
-      break;
-    case "Windows":
-      os = "Windows"
-      break;
-    case "Macintosh":
-      os ="MacOS"
-      break;
-    default:
+    if (matcher.exec(info)) {
+      switch (matcher.exec(info).groups.os) {
+        case "X11":
+          os = "Linux"
+          break;
+        case "Windows":
+          os = "Windows"
+          break;
+        case "Macintosh":
+          os ="MacOS"
+          break;
+        default:
+          os = null;
+          break;
+      }
+    } else {
       os = null;
-      break;
-  }
+    }
   return os
 }
 
