@@ -1,0 +1,56 @@
+/* ---------------------------------- */
+/* Landing page */
+/* ---------------------------------- */
+
+.landing-page {
+  color: #FFF;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/blur-background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.landing-page .container {
+  padding-top: 100px;
+}
+
+.landing-page h1 {
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+.about-user-text {
+  margin: 25px 0px;
+}
+
+.about-me-link {
+  margin-top: 25px;
+  text-align: right;
+}
+
+.about-me-link a {
+  font-family: "Libre Baskerville", serif;
+  font-size: 20px;
+  text-decoration: none;
+  color: #FFF;
+  -webkit-animation: fade 4s ease-in-out infinite;
+  -moz-animation:    fade 4s ease-in-out infinite;
+  animation:         fade 4s ease-in-out infinite;
+  display: none;
+}
+
+@-webkit-keyframes fade {
+  0%   { opacity: 0; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-moz-keyframes fade {
+  0%   { opacity: 0; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes fade {
+  0%   { opacity: 0; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; }
+}
