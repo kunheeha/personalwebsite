@@ -24,8 +24,10 @@ def create_app():
 
     from personalwebsite.main.routes import main
     from personalwebsite.logger.routes import logger
+    from personalwebsite.blog.routes import blog
     app.register_blueprint(main)
     app.register_blueprint(logger)
+    app.register_blueprint(blog)
 
     return app
 
