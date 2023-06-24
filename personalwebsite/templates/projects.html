@@ -22,9 +22,9 @@
 <!-- Header -->
 <header class="projects-header">
   <div class="container">
-    <h1>personal projects</h1>
-    <p>noun: /ˈpɜːrsənəl ˈprɒdʒɛkts/</p>
-    <h3>a collection of random things I made in my spare time</h3>
+    <h1 data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">personal projects</h1>
+    <p data-aos="fade-right" data-aos-duration="800" data-aos-delay="300">noun: /ˈpɜːrsənəl ˈprɒdʒɛkts/</p>
+    <h3 data-aos="fade-right" data-aos-duration="800" data-aos-delay="400">a collection of random things I made in my spare time</h3>
   </div>
 </header>
 
@@ -33,7 +33,7 @@
   <div class="container">
     <div class="row row-cols-1 row-cols-md-3">
       {% for project in projects %}
-      <div class="col mb-5 mr-5">
+      <div class="col mb-5 mr-5" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="{{ project.id }}00">
         {% if project.deployed %}
         <a href="{{ project.live_link }}" target="_blank">
         {% else %}
