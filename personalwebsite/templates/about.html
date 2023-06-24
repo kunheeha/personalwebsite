@@ -2,7 +2,8 @@
 {% extends 'base.html' %}
 
 {% block head %}
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <link rel="stylesheet" media="screen and (min-width: 900px)" href="{{ url_for('static', filename='css/main.css') }}">
+  <link rel="stylesheet" media="screen and (max-width: 899px)" href="{{ url_for('static', filename='css/main_phonescreen.css') }}">
   <title>{{ me.first_name }} {{ me.last_name }}</title>
 {% endblock %}
 
@@ -38,7 +39,7 @@
           </ul>
         </div>
       </div>
-      <div class="col-md-6 d-sm-none d-md-block">
+      <div class="col-md-6 profile-photo">
         <div class="p-img" data-aos="fade" data-aos-duration="1000" data-aos-delay="600">
           <img src="{{ profile_photo }}" alt="">
         </div>
@@ -56,7 +57,7 @@
         <p data-aos="fade" data-aos-duration="900" data-aos-delay="300">{{ me.about }}</p>
       </div>
       <div class="col-md-1 d-md-block d-sm-none"></div>
-      <div class="col-md-5 col-sm-12">
+      <div class="col-md-5 col-sm-12 about-me-skills">
         <h2 class="h4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">my skills</h2>
         <div class="skill-tags">
           <ul data-aos="fade" data-aos-duration="900" data-aos-delay="400">
