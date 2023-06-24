@@ -2,6 +2,12 @@
   padding: 100px 0px 30px;
 }
 
+@media only screen and (max-width: 699px) {
+  .projects-header .container {
+    padding: 100px 15px 30px;
+  }
+}
+
 .projects-header h1 {
   margin-bottom: 20px
 }
@@ -17,8 +23,13 @@
 }
 
 .projects-main {
-  height: 100%;
   padding: 100px 0px 0px;
+}
+
+@media only screen and (min-width: 700px) {
+  .projects-main {
+    height: 100%;
+  }
 }
 
 .projects-main a {
