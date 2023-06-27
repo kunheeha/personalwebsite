@@ -17,7 +17,6 @@ def log_visitor():
                 country=info['country'],
                 region=info['region'],
                 city=info['city'],
-                postal=info['postal'],
                 timezone=info['timezone'],
                 page=info['page']
                 )
