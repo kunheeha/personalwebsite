@@ -78,28 +78,58 @@
       <h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">Personal Projects</h2>
     </div>
     <div class="row">
-      {% for project in projects %}
       <div class="col-12 col-sm-6 col-xl-3">
         <div class="project-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
           <div class="project-item-inner shadow-1 white-bg">
             <div class="project-item-front white-bg">
-              {{ project_icon(project.webapp) }}
-              <h3>{{ project.name }}</h3>
+              <h3>all</h3>
             </div>
             <div class="project-item-back white-bg">
-              <h3 class="h4">{{ project.name }}</h3>
-              <p>{{ project.brief }}</p>
-              <div class="project-links">
-                <span style="float:left;"><a href="{{ project.source_code_link }}" target="_blank">source code</a></span>
-                {% if project.webapp and project.deployed %}
-                <span style="float:right;"><a href="{{ project.live_link }}" target="_blank">view live</a></span>
-                {% endif %}
-              </div>
+              <h3 class="h4">discalimer</h3>
+              <p>Used to display some things I worked on prior to any commercial experience,</p>
             </div>
           </div>
         </div>
       </div>
-      {% endfor %}
+      <div class="col-12 col-sm-6 col-xl-3">
+        <div class="project-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
+          <div class="project-item-inner shadow-1 white-bg">
+            <div class="project-item-front white-bg">
+              <h3>my</h3>
+            </div>
+            <div class="project-item-back white-bg">
+              <h3 class="h4">discalimer</h3>
+              <p>but have removed them since they are no longer reflective of the work I produce now.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-xl-3">
+        <div class="project-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
+          <div class="project-item-inner shadow-1 white-bg">
+            <div class="project-item-front white-bg">
+              <h3>personal projects</h3>
+            </div>
+            <div class="project-item-back white-bg">
+              <h3 class="h4">discalimer</h3>
+              <p>If you're still interested in my work from inexperienced days, please click on the projects tab in the nav bar,</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-xl-3">
+        <div class="project-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
+          <div class="project-item-inner shadow-1 white-bg">
+            <div class="project-item-front white-bg">
+              <h3>are old</h3>
+            </div>
+            <div class="project-item-back white-bg">
+              <h3 class="h4">disclaimer</h3>
+              <p> or 'view more' below.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="project-page-link">
       <a class="internal-links" href="{{ url_for('main.projects') }}" data-aos="fade" data-aos-duration="800" data-aos-delay="600">VIEW ALL</a>
