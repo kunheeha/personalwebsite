@@ -78,7 +78,10 @@
       <h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">Personal Projects</h2>
     </div>
     <div class="row">
-      {% for project in projects %}
+      <div class="col-12">
+        <p data-aos="fade" data-aos-duration="900" data-aos-delay="300">Used to display some things here I worked on prior to any commercial experience, but have removed them since they are no longer reflective of the work I produce now. If you're still interested in my work from inexperienced days, please click on the projects tab in the nav bar, or 'view all' below.</p>
+      </div>
+      <!--{% for project in projects %}
       <div class="col-12 col-sm-6 col-xl-3">
         <div class="project-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
           <div class="project-item-inner shadow-1 white-bg">
@@ -99,7 +102,7 @@
           </div>
         </div>
       </div>
-      {% endfor %}
+      {% endfor %}-->
     </div>
     <div class="project-page-link">
       <a class="internal-links" href="{{ url_for('main.projects') }}" data-aos="fade" data-aos-duration="800" data-aos-delay="600">VIEW ALL</a>
